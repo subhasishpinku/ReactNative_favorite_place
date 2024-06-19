@@ -4,6 +4,8 @@
 //npm install expo-cli
 //npm install -g expo-cli
 //expo upgrade 51.0.0
+//expo install expo-location
+//expo install react-native-maps
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
@@ -12,6 +14,7 @@ import AllPlaces from './screens/AllPlaces';
 import AddPlace from './screens/AddPlace';
 import IconButton from './components/UI/IconButton';
 import { Colors } from './constants/colors';
+import Map from './screens/Map';
 
 const Stack = createNativeStackNavigator();
 
@@ -35,7 +38,7 @@ export default function App() {
           headerLeft: null,
           }}
         >
-        <Stack.Screen name="ALLPlaces" component={AllPlaces} 
+        <Stack.Screen name="AllPlaces" component={AllPlaces} 
          options={(
           {navigation})=>({
           headerRight: ({tintColor}) => 
@@ -59,6 +62,7 @@ export default function App() {
         headerLeft: null,
         }}
         />
+        <Stack.Screen name="Map" component={Map}/>
       </Stack.Navigator>
      </NavigationContainer>
     </>
